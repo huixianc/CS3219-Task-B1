@@ -16,6 +16,7 @@ exports.index = function (req, res) {
             message: "Contacts retrieved successfully",
             data: contacts
         });
+        return;
     });
 };
 
@@ -39,6 +40,7 @@ exports.new = function (req, res) {
             message: 'New contact created!',
             data: contact
         });
+        return;
     });
 };
 
@@ -57,6 +59,7 @@ exports.view = function (req, res) {
             message: 'Contact details loading..',
             data: contact
         });
+        return;
     });
 };
 
@@ -88,6 +91,7 @@ exports.update = function (req, res) {
                 message: 'Contact Info updated',
                 data: contact
             });
+            return;
         });
     });
 };
@@ -109,5 +113,6 @@ exports.delete = function (req, res) {
             status: "success",
             message: 'Contact deleted'
         });
+        return;
     });
 };
