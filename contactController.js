@@ -1,9 +1,9 @@
 // Import contact model
-Contact = require('./contactModel');
+let Contact = require('./contactModel');
 
 // Handle index actions
 exports.index = function (req, res) {
-    Contact.get(function (err, contacts) {
+    Contact.find(function (err, contacts) {
         if (err) {
             res.status(400).json({
                 status: "error",
