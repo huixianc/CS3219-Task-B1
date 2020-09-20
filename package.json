@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-register tests/*.js --timeout 20000 --exit"
+    "test": "mocha --require babel-register tests/*.js --timeout 10000 --exit"
   },
   "repository": {
     "type": "git",
