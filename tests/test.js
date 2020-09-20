@@ -8,31 +8,32 @@ chai.should();
 
 describe("Test", () => {
     describe("GET /", () => {
-        // Test to get all contacts record
-        // it("should get all contacts record", (done) => {
-        //     try {
-        //         chai.request(app)
-        //             .get('/api/contacts')
-        //             .end((err, res) => {
-        //                 res.should.have.status(200);
-        //                 done();
-        //             });
-        //     } catch (done) {}
-            
-        // });
-        // Test to get single contact record
-        it("should get a single contact record", (done) => {
+        //Test to get all contacts record
+        it("should get all contacts record", (done) => {
             try {
-                const id = '5f66eaf2b988e9089ceab338';
                 chai.request(app)
-                    .get(`/api/contacts/${id}`)
+                    .get('/api/contacts')
                     .end((err, res) => {
                         res.should.have.status(200);
                         done();
                     });
-            } catch (done) { }
+            } catch (done) {}
             
         });
+        
+        // Test to get single contact record
+        // it("should get a single contact record", (done) => {
+        //     try {
+        //         const id = '5f66eaf2b988e9089ceab338';
+        //         chai.request(app)
+        //             .get(`/api/contacts/${id}`)
+        //             .end((err, res) => {
+        //                 res.should.have.status(200);
+        //                 done();
+        //             });
+        //     } catch (done) { }
+            
+        // });
 
         // Test to get single contact record
         it("should not get a single contact record", (done) => {
