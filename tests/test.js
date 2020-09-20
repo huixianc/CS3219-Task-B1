@@ -15,7 +15,6 @@ describe("Test", () => {
                     .get('/api/contacts')
                     .end((err, res) => {
                         res.should.have.status(200);
-                        //res.body.should.be.a('object');
                         done();
                     });
             } catch (done) {}
@@ -29,7 +28,6 @@ describe("Test", () => {
                     .get(`/api/contacts/${id}`)
                     .end((err, res) => {
                         res.should.have.status(200);
-                        //res.body.should.be.a('object');
                         done();
                     });
             } catch (done) { }
