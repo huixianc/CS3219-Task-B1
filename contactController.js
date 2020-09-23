@@ -23,14 +23,13 @@ exports.index = function (req, res) {
 exports.new = function (req, res) {
     var contact = new Contact();
     contact.name = req.body.name ? req.body.name : contact.name;
-    contact.email = req.body.email ? req.body.email: contact.email;
-
+    
     // save the contact and check for errors
     contact.save(function (err) {
         if (err) {
             res.status(400).json({
                 status: "error",
-                message: "Contact must have name and email",
+                message: "Contact must have name",
             });
             return;
         }
@@ -42,23 +41,6 @@ exports.new = function (req, res) {
     });
 };
 
-// Handle view contact info
-exports.view = function (req, res) {
-    Contact.findById(req.params.contact_id, function (err, contact) {
-        if (err) {
-            res.status(400).json({
-                status: "error",
-                message: "Cannot display given contact, please check that it exists",
-            });
-            return;
-        }
-            
-        res.json({
-            message: 'Contact details loading..',
-            data: contact
-        });
-    });
-};
 
 // Handle update contact info
 exports.update = function (req, res) {
@@ -72,14 +54,13 @@ exports.update = function (req, res) {
         }
             
         contact.name = req.body.name ? req.body.name : contact.name;
-        contact.email = req.body.email ? req.body.email : contact.email;
-
+       
         // save the contact and check for errors
         contact.save(function (err) {
             if (err) {
                 res.status(400).json({
                     status: "error",
-                    message: "Contact must have name and email",
+                    message: "Contact must have name",
                 });
                 return;
             }

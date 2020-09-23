@@ -19,12 +19,8 @@ router.route('/contacts')
     
 router.route('/contacts/add')
     .post(contactController.new);
-    
-router.route('/contacts/:contact_id')
-    .get(contactController.view);
 
 router.route('/contacts/update/:contact_id')
-    .patch(contactController.update)
     .put(contactController.update);
 
 router.route('/contacts/delete/:contact_id')
