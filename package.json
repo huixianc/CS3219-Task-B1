@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register tests/*.js --timeout 10000 --exit"
+    "test": "mocha --require babel-register tests/*.js --timeout 10000 --exit"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,8 @@
   },
   "homepage": "https://github.com/huixianc/CS3219-Task-B1#readme",
   "dependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/register": "^7.10.5",
-    "babel-loader": "^8.0.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
